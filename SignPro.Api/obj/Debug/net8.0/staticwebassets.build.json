@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "s9fz2/OjQENh+t+OMABCw0XN7rqXmcEOR/nTsn3CffY=",
+  "Hash": "HK1MrORMRFVzh6aDCDJbc9SnKNJwJPFw6hdZuhgJQQQ=",
   "Source": "SignPro.Api",
   "BasePath": "_content/SignPro.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SignPro.Api\\wwwroot",
+      "Source": "SignPro.Api",
+      "ContentRoot": "D:\\SignPro\\SignPro.Api\\wwwroot\\",
+      "BasePath": "_content/SignPro.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
