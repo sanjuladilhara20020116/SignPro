@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "s9fz2/OjQENh+t+OMABCw0XN7rqXmcEOR/nTsn3CffY=",
+  "Source": "SignPro.Api",
+  "BasePath": "_content/SignPro.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
