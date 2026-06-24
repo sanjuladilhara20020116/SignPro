@@ -1,1 +1,126 @@
-<p>history works!</p>
+<div class="page history-page">
+  <nav class="history-topbar glass-card">
+    <div class="brand">
+      <div class="logo">
+        <img src="/images/signpro.png" alt="SignPro Logo" />
+      </div>
+
+      <div>
+        <h2>Document History</h2>
+        <p>View, download, and manage your signed PDF documents.</p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/sign-pdf">Sign PDF</a>
+    </div>
+  </nav>
+
+  <section class="history-hero">
+    <div class="history-hero-content glass-card">
+      <div>
+        <p class="eyebrow">Signed Documents</p>
+        <h1>Your signed PDFs in one secure place.</h1>
+        <p>
+          Download previously signed documents or remove records you no longer need.
+        </p>
+      </div>
+
+      <div class="history-stat">
+        <strong>{{ documents.length }}</strong>
+        <span>Total Signed PDFs</span>
+      </div>
+    </div>
+  </section>
+
+  @if (errorMessage) {
+    <div class="alert error-alert">
+      {{ errorMessage }}
+    </div>
+  }
+
+  @if (successMessage) {
+    <div class="alert success-alert">
+      {{ successMessage }}
+    </div>
+  }
+
+  <section class="history-panel glass-card">
+    <div class="history-panel-header">
+      <div>
+        <p class="eyebrow">Recent Activity</p>
+        <h2>Signed PDF Files</h2>
+      </div>
+
+      <button type="button" class="btn-outline refresh-btn" (click)="loadHistory()">
+        Refresh
+      </button>
+    </div>
+
+    @if (loading) {
+      <div class="history-loading">
+        <div class="spinner"></div>
+        <p>Loading document history...</p>
+      </div>
+    }
+
+    @if (!loading && documents.length === 0) {
+      <div class="empty-history">
+        <div class="empty-doc">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <h3>No signed PDFs yet</h3>
+        <p>Sign your first PDF document and it will appear here.</p>
+
+        <a routerLink="/sign-pdf" class="btn-primary start-btn">
+          Sign PDF Now
+        </a>
+      </div>
+    }
+
+    @if (!loading && documents.length > 0) {
+      <div class="history-list">
+        @for (document of documents; track document.id) {
+          <div class="history-card">
+            <div class="file-badge">
+              PDF
+            </div>
+
+            <div class="history-info">
+              <h3>{{ formatFileName(document.originalFileName) }}</h3>
+              <p>{{ document.signedFileName }}</p>
+
+              <div class="history-meta">
+                <span>Signed at {{ formatDate(document.signedAt) }}</span>
+              </div>
+            </div>
+
+            <div class="history-actions">
+              <button
+                type="button"
+                class="download-btn"
+                [disabled]="downloadingId === document.id"
+                (click)="downloadDocument(document)"
+              >
+                {{ downloadingId === document.id ? 'Downloading...' : 'Download' }}
+              </button>
+
+              <button
+                type="button"
+                class="delete-btn"
+                [disabled]="deletingId === document.id"
+                (click)="deleteDocument(document)"
+              >
+                {{ deletingId === document.id ? 'Deleting...' : 'Delete' }}
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </section>
+</div>

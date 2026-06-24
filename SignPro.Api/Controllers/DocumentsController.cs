@@ -2,6 +2,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PdfSharpCore.Drawing;
 using PdfSharpCore.Pdf.IO;
 using SignPro.Api.Data;
@@ -30,6 +31,13 @@ public class DocumentsController : ControllerBase
     [RequestSizeLimit(MaxPdfSize)]
     public async Task<IActionResult> UploadPdf([FromForm] IFormFile file)
     {
+        var userId = GetCurrentUserId();
+
+        if (userId <= 0)
+        {
+            return Unauthorized(new { message = "Invalid user token. Please login again." });
+        }
+
         if (file == null || file.Length == 0)
         {
             return BadRequest(new { message = "Please upload a PDF file." });
@@ -68,8 +76,6 @@ public class DocumentsController : ControllerBase
             await file.CopyToAsync(stream);
         }
 
-        var userId = GetCurrentUserId();
-
         _context.AuditLogs.Add(new AuditLog
         {
             UserId = userId,
@@ -96,6 +102,13 @@ public class DocumentsController : ControllerBase
     [RequestSizeLimit(50 * 1024 * 1024)]
     public async Task<IActionResult> SignPdf([FromForm] SignPdfRequestDto dto)
     {
+        var userId = GetCurrentUserId();
+
+        if (userId <= 0)
+        {
+            return Unauthorized(new { message = "Invalid user token. Please login again." });
+        }
+
         if (dto.File == null || dto.File.Length == 0)
         {
             return BadRequest(new { message = "Please upload a PDF file." });
@@ -137,8 +150,6 @@ public class DocumentsController : ControllerBase
         {
             return BadRequest(new { message = "Invalid preview page size." });
         }
-
-        var userId = GetCurrentUserId();
 
         var webRoot = GetWebRootPath();
 
@@ -217,21 +228,24 @@ public class DocumentsController : ControllerBase
             document.Save(signedPdfPath);
         }
 
-        _context.Signatures.Add(new Signature
+        var signatureRecord = new Signature
         {
             UserId = userId,
             SignatureImagePath = $"/uploads/signatures/{signatureFileName}",
             CreatedAt = DateTime.UtcNow
-        });
+        };
 
-        _context.Documents.Add(new Document
+        var signedDocument = new Document
         {
             UserId = userId,
             OriginalFileName = originalFileName,
             SignedFileName = signedFileName,
             FilePath = $"/uploads/signed/{signedFileName}",
             SignedAt = DateTime.UtcNow
-        });
+        };
+
+        _context.Signatures.Add(signatureRecord);
+        _context.Documents.Add(signedDocument);
 
         _context.AuditLogs.Add(new AuditLog
         {
@@ -252,9 +266,138 @@ public class DocumentsController : ControllerBase
         );
     }
 
+    [HttpGet("history")]
+public async Task<IActionResult> GetHistory()
+{
+    var userId = GetCurrentUserId();
+
+    if (userId <= 0)
+    {
+        return Unauthorized(new { message = "Invalid user token. Please login again." });
+    }
+
+    var documents = await _context.Documents
+        .Where(d => d.UserId == userId)
+        .OrderByDescending(d => d.SignedAt)
+        .Select(d => new DocumentHistoryDto
+        {
+            Id = d.Id,
+            OriginalFileName = d.OriginalFileName,
+            SignedFileName = d.SignedFileName,
+            FilePath = d.FilePath,
+            FileUrl = $"{Request.Scheme}://{Request.Host}{d.FilePath}",
+            SignedAt = d.SignedAt
+        })
+        .ToListAsync();
+
+    return Ok(documents);
+}
+
+    [HttpGet("download/{id:int}")]
+    public async Task<IActionResult> DownloadSignedPdf(int id)
+    {
+        var userId = GetCurrentUserId();
+
+        if (userId <= 0)
+        {
+            return Unauthorized(new { message = "Invalid user token. Please login again." });
+        }
+
+        var document = await _context.Documents
+            .FirstOrDefaultAsync(d => d.Id == id && d.UserId == userId);
+
+        if (document == null)
+        {
+            return NotFound(new { message = "Document not found." });
+        }
+
+        var webRoot = GetWebRootPath();
+
+        var relativePath = document.FilePath
+            .TrimStart('/')
+            .Replace("/", Path.DirectorySeparatorChar.ToString());
+
+        var fullPath = Path.Combine(webRoot, relativePath);
+
+        if (!System.IO.File.Exists(fullPath))
+        {
+            return NotFound(new { message = "Signed PDF file is missing." });
+        }
+
+        var fileBytes = await System.IO.File.ReadAllBytesAsync(fullPath);
+
+        _context.AuditLogs.Add(new AuditLog
+        {
+            UserId = userId,
+            Action = $"Downloaded signed PDF: {document.OriginalFileName}",
+            Timestamp = DateTime.UtcNow,
+            IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown"
+        });
+
+        await _context.SaveChangesAsync();
+
+        return File(
+            fileBytes,
+            "application/pdf",
+            document.SignedFileName
+        );
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteSignedPdf(int id)
+    {
+        var userId = GetCurrentUserId();
+
+        if (userId <= 0)
+        {
+            return Unauthorized(new { message = "Invalid user token. Please login again." });
+        }
+
+        var document = await _context.Documents
+            .FirstOrDefaultAsync(d => d.Id == id && d.UserId == userId);
+
+        if (document == null)
+        {
+            return NotFound(new { message = "Document not found." });
+        }
+
+        var webRoot = GetWebRootPath();
+
+        var relativePath = document.FilePath
+            .TrimStart('/')
+            .Replace("/", Path.DirectorySeparatorChar.ToString());
+
+        var fullPath = Path.Combine(webRoot, relativePath);
+
+        if (System.IO.File.Exists(fullPath))
+        {
+            System.IO.File.Delete(fullPath);
+        }
+
+        _context.Documents.Remove(document);
+
+        _context.AuditLogs.Add(new AuditLog
+        {
+            UserId = userId,
+            Action = $"Deleted signed PDF: {document.OriginalFileName}",
+            Timestamp = DateTime.UtcNow,
+            IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown"
+        });
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new { message = "Document deleted successfully." });
+    }
+
     private int GetCurrentUserId()
     {
-        var userIdText = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var userIdText =
+            User.FindFirstValue(ClaimTypes.NameIdentifier) ??
+            User.FindFirstValue("nameid") ??
+            User.FindFirstValue("sub") ??
+            User.FindFirstValue("id") ??
+            User.FindFirstValue("userId") ??
+            User.FindFirstValue("UserId");
 
         if (!int.TryParse(userIdText, out var userId))
         {

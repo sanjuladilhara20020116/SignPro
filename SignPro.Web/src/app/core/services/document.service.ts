@@ -29,6 +29,15 @@ export interface SignPdfRequest {
   addDateStamp: boolean;
 }
 
+export interface DocumentHistoryItem {
+  id: number;
+  originalFileName: string;
+  signedFileName: string;
+  filePath: string;
+  fileUrl: string;
+  signedAt: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -70,5 +79,20 @@ export class DocumentService {
       responseType: 'blob',
       observe: 'response'
     });
+  }
+
+  getHistory(): Observable<DocumentHistoryItem[]> {
+    return this.http.get<DocumentHistoryItem[]>(`${this.apiUrl}/history`);
+  }
+
+  downloadSignedPdf(id: number): Observable<HttpResponse<Blob>> {
+    return this.http.get(`${this.apiUrl}/download/${id}`, {
+      responseType: 'blob',
+      observe: 'response'
+    });
+  }
+
+  deleteSignedPdf(id: number): Observable<{ message: string }> {
+    return this.http.delete<{ message: string }>(`${this.apiUrl}/${id}`);
   }
 }

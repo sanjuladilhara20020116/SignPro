@@ -1,0 +1,113 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\11f63d6509f84d84874c018bc2170c54.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\11f63d6509f84d84874c018bc2170c54.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\515db42075f34e9a900e0f2defb4754a.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\515db42075f34e9a900e0f2defb4754a.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\65442aabe3a8434894b045418bb3728f.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\65442aabe3a8434894b045418bb3728f.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\7f2b55b0ffc84f23b92a3d1ad5078c85.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\7f2b55b0ffc84f23b92a3d1ad5078c85.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\9227b34e459146259394080d915d512c.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\9227b34e459146259394080d915d512c.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\ab10fc0c7c374b2891e4e43d81276499.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\ab10fc0c7c374b2891e4e43d81276499.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\c59b53b98c7c499087fe42c5304113ab.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\c59b53b98c7c499087fe42c5304113ab.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\pdfs\\fa8ff45eb24443d0ab22109fd086b98a.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\fa8ff45eb24443d0ab22109fd086b98a.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\48e4bca687bf4d4cb0524b41bd3c0772.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\48e4bca687bf4d4cb0524b41bd3c0772.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\69e3541bc04b43bbaf29edee68a484ae.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\69e3541bc04b43bbaf29edee68a484ae.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\6fd4f90b20344030b4d2b48e11433d5f.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\6fd4f90b20344030b4d2b48e11433d5f.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\78cac9665f0c419aa541adb51cecb527.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\78cac9665f0c419aa541adb51cecb527.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\873706c98c114bab81feb839b874b507.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\873706c98c114bab81feb839b874b507.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\91515527af6c4bc79e8a17ee9cbfd5d0.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\91515527af6c4bc79e8a17ee9cbfd5d0.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\a198092468ca43cbb6e0bc907a39b2f9.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\a198092468ca43cbb6e0bc907a39b2f9.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signatures\\f3d979699bf94e2b8747bfa55773b9d7.png",
+      "PackagePath": "staticwebassets\\uploads\\signatures\\f3d979699bf94e2b8747bfa55773b9d7.png"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624105954_4d9e3bf53711456ab23715ca2307fa49.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624105954_4d9e3bf53711456ab23715ca2307fa49.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624110134_9a26090f27af42fd9f317d80bd4e62e2.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624110134_9a26090f27af42fd9f317d80bd4e62e2.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624110211_01a34699a3704c7483b4184dcc20e3da.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624110211_01a34699a3704c7483b4184dcc20e3da.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624120602_7fbbf4e108574125be593643ed9dcb30.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624120602_7fbbf4e108574125be593643ed9dcb30.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624124244_d07646b0bada48b9b30d5bc6ea8f750c.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624124244_d07646b0bada48b9b30d5bc6ea8f750c.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624131306_ff53b8dbfd6549fa975ea36ba92520b0.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624131306_ff53b8dbfd6549fa975ea36ba92520b0.pdf"
+    },
+    {
+      "Id": "D:\\SignPro\\SignPro.Api\\wwwroot\\uploads\\signed\\signed_20260624131954_a842ae42b61441d5aabf39375578b66f.pdf",
+      "PackagePath": "staticwebassets\\uploads\\signed\\signed_20260624131954_a842ae42b61441d5aabf39375578b66f.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SignPro.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SignPro.Api.props",
+      "PackagePath": "build\\SignPro.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SignPro.Api.props",
+      "PackagePath": "buildMultiTargeting\\SignPro.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SignPro.Api.props",
+      "PackagePath": "buildTransitive\\SignPro.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
