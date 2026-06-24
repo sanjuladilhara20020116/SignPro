@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SignPro.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6275bc70eabf140bee5d1ec4f8d8690163df1807")]
 [assembly: System.Reflection.AssemblyProductAttribute("SignPro.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SignPro.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

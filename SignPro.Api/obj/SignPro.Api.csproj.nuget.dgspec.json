@@ -10,7 +10,7 @@
         "projectUniqueName": "D:\\SignPro\\SignPro.Api\\SignPro.Api.csproj",
         "projectName": "SignPro.Api",
         "projectPath": "D:\\SignPro\\SignPro.Api\\SignPro.Api.csproj",
-        "packagesPath": "C:\\Users\\Sanju\\.nuget\\packages\\",
+        "packagesPath": "D:\\NuGetPackages",
         "outputPath": "D:\\SignPro\\SignPro.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -47,7 +47,25 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[8.0.28, )"
             },
@@ -55,9 +73,17 @@
               "target": "Package",
               "version": "[6.2.4, )"
             },
+            "PdfSharpCore": {
+              "target": "Package",
+              "version": "[1.3.67, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.7.0, )"
             }
           },
           "imports": [

@@ -1,0 +1,169 @@
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+.orb-one {
+  width: 260px;
+  height: 260px;
+  background: #7c3aed;
+  top: 8%;
+  left: 8%;
+}
+
+.orb-two {
+  width: 320px;
+  height: 320px;
+  background: #06b6d4;
+  right: 5%;
+  bottom: 8%;
+}
+
+.auth-wrapper {
+  width: min(1050px, 100%);
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-section {
+  padding: 56px;
+  background:
+    linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(6, 182, 212, 0.12)),
+    rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-box {
+  width: 190px;
+  height: 90px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.45);
+  margin-bottom: 28px;
+  padding: 10px 16px;
+  overflow: hidden;
+}
+
+.logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-section h1 {
+  font-size: 58px;
+  line-height: 1;
+  margin: 0 0 20px;
+  letter-spacing: -2px;
+}
+
+.brand-section p {
+  color: #dbeafe;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 470px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.feature-list span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-section {
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--primary-light);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px;
+}
+
+.form-section h2 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.sub-text {
+  color: var(--text-muted);
+  margin-bottom: 34px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  color: #dbeafe;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.full-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.switch-text {
+  margin-top: 24px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.switch-text a {
+  color: var(--primary-light);
+  font-weight: 800;
+}
+
+@media (max-width: 850px) {
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-section {
+    display: none;
+  }
+
+  .form-section {
+    padding: 34px;
+  }
+}

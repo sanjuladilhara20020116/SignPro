@@ -1,0 +1,200 @@
+<div class="page dashboard-page">
+  
+
+  <nav class="topbar glass-card">
+    <div class="brand">
+      <div class="logo">
+        <img src="/images/signpro.png" alt="SignPro Logo" />
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <a routerLink="/dashboard">Home</a>
+      <a routerLink="/sign-pdf">Sign PDF</a>
+      <a routerLink="/history">History</a>
+
+      @if (role === 'Admin') {
+        <a routerLink="/admin">Admin</a>
+      }
+
+      <button class="btn-outline" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">
+        
+        Secure PDF Signature Platform
+      </div>
+
+      <h1>Create , Sign and Verify PDF Documents in minutes.</h1>
+
+      <p>
+        SignPro helps you upload PDFs, draw or upload your signature,
+        place it perfectly on any page, and download a professional signed document.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" routerLink="/sign-pdf">Start Signing Now</a>
+        <a class="btn-outline large" routerLink="/history">View Documents</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <strong>100%</strong>
+          <span>PDF Support</span>
+        </div>
+
+        <div>
+          <strong>Secure</strong>
+          <span>User Access</span>
+        </div>
+
+        <div>
+          <strong>Fast</strong>
+          <span>PDF Download</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual glass-card">
+      <div class="video-card">
+        
+
+        <div class="video-body">
+          <video
+            #signVideo
+            class="sign-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="/videos/sign-demo.mp4" type="video/mp4" />
+          </video>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="quick-actions">
+    <a routerLink="/sign-pdf" class="action-card glass-card">
+      <div class="icon-box purple">01</div>
+      <h3>Upload PDF</h3>
+      <p>Select your PDF file and preview all pages inside the browser.</p>
+    </a>
+
+    <a routerLink="/sign-pdf" class="action-card glass-card">
+      <div class="icon-box cyan">02</div>
+      <h3>Create Signature</h3>
+      <p>Draw your signature using canvas or upload an existing signature image.</p>
+    </a>
+
+    <a routerLink="/sign-pdf" class="action-card glass-card">
+      <div class="icon-box green">03</div>
+      <h3>Place & Download</h3>
+      <p>Drag, resize, insert the signature, and download the signed PDF.</p>
+    </a>
+  </section>
+
+  <section class="website-section glass-card">
+    <div class="section-left">
+      <p class="eyebrow">How SignPro Works</p>
+
+      <h2>A complete digital signing workflow for your documents.</h2>
+
+      <p>
+        This dashboard gives users a modern document signing experience.
+        
+      </p>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span>1</span>
+          <div>
+            <h4>Upload your PDF</h4>
+            <p>Validate and preview your document before signing.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <span>2</span>
+          <div>
+            <h4>Add your signature</h4>
+            <p>Draw, upload, resize and position the signature visually.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <span>3</span>
+          <div>
+            <h4>Download signed PDF</h4>
+            <p>The backend inserts the signature and returns the final PDF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-right">
+      <div class="mini-dashboard">
+        <div class="mini-header">
+          <span></span>
+          <p>Document Activity</p>
+        </div>
+
+        <div class="activity-item active">
+          <div></div>
+          <section>
+            <strong>Contract Agreement</strong>
+            <span>Signed successfully</span>
+          </section>
+          <small>Now</small>
+        </div>
+
+        <div class="activity-item">
+          <div></div>
+          <section>
+            <strong>Invoice Document</strong>
+            <span>Signature placed</span>
+          </section>
+          <small>2 min</small>
+        </div>
+
+        <div class="activity-item">
+          <div></div>
+          <section>
+            <strong>University Form</strong>
+            <span>PDF uploaded</span>
+          </section>
+          <small>5 min</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-grid">
+    <div class="feature-card glass-card">
+      <h3>Multi-page PDF Preview</h3>
+      <p>Preview PDF pages clearly before adding the signature.</p>
+    </div>
+
+    <div class="feature-card glass-card">
+      <h3>Drag & Resize Signature</h3>
+      <p>Place your signature exactly where it should appear.</p>
+    </div>
+
+    <div class="feature-card glass-card">
+      <h3>Document History</h3>
+      <p>Access previous signed documents anytime from your dashboard.</p>
+    </div>
+
+    <div class="feature-card glass-card">
+      <h3>Signature </h3>
+      <p>Background removal for uploaded signatures.</p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,69 @@
+<div class="auth-page">
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <section class="auth-wrapper glass-card">
+    <div class="brand-section">
+      <div class="logo-box">
+        <img src="/images/signpro.png" alt="SignPro Logo" />
+      </div>
+
+      <h1>SignPro</h1>
+      <p>
+        Upload PDFs, create beautiful digital signatures, place them visually,
+        and download professional signed documents.
+      </p>
+
+      <div class="feature-list">
+        <span>PDF Preview</span>
+        <span>Draw Signature</span>
+        <span>Secure JWT</span>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <p class="eyebrow">Welcome back</p>
+      <h2>Login to your account</h2>
+      <p class="sub-text">Continue signing documents securely.</p>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <label>Email Address</label>
+        <input
+          class="input-box"
+          type="email"
+          formControlName="email"
+          placeholder="you@example.com"
+        />
+
+        @if (form.controls.email.touched && form.controls.email.invalid) {
+          <p class="error-text">Enter a valid email address.</p>
+        }
+
+        <label>Password</label>
+        <input
+          class="input-box"
+          type="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+
+        @if (form.controls.password.touched && form.controls.password.invalid) {
+          <p class="error-text">Password is required.</p>
+        }
+
+        @if (errorMessage) {
+          <p class="error-text">{{ errorMessage }}</p>
+        }
+
+        <button class="btn-primary full-btn" type="submit" [disabled]="loading">
+          {{ loading ? 'Signing in...' : 'Login' }}
+        </button>
+      </form>
+
+      <p class="switch-text">
+        New to SignPro?
+        <a routerLink="/register">Create account</a>
+      </p>
+    </div>
+  </section>
+</div>
