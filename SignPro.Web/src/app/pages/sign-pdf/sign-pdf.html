@@ -1,0 +1,564 @@
+<div class="page sign-page">
+  <nav class="sign-topbar glass-card">
+    <div class="brand">
+      <div class="logo">
+        <img src="/images/signpro.png" alt="SignPro Logo" />
+      </div>
+
+      <div>
+        <h2>Sign PDF</h2>
+        <p>Upload, sign, and download your PDF securely.</p>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/history">History</a>
+    </div>
+  </nav>
+
+  <section class="sign-hero">
+    <div class="hero-left">
+      <p class="eyebrow">Digital Signature Workspace</p>
+      <h1>Create a signed PDF in minutes.</h1>
+      <p class="hero-desc">
+        Upload your document, draw your signature, place it exactly on the page,
+        and download the final signed PDF instantly.
+      </p>
+
+      <div class="hero-badges">
+        <span>PDF Preview</span>
+        <span>Draw Signature</span>
+        <span>Download Signed PDF</span>
+      </div>
+    </div>
+
+    <div class="hero-card glass-card" style="padding: 22px; display: block; overflow: hidden;">
+  <div style="width: 100%; display: grid; gap: 14px; box-sizing: border-box;">
+    
+    <div style="
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    ">
+      <div style="display: flex; gap: 6px;">
+        <span style="width: 9px; height: 9px; border-radius: 50%; background: #ef4444; display: block;"></span>
+        <span style="width: 9px; height: 9px; border-radius: 50%; background: #f59e0b; display: block;"></span>
+        <span style="width: 9px; height: 9px; border-radius: 50%; background: #22c55e; display: block;"></span>
+      </div>
+
+      <div style="min-width: 0;">
+        <strong style="
+          display: block;
+          color: white;
+          font-size: 14px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        ">
+          Signed_Agreement.pdf
+        </strong>
+        <small style="display: block; color: #94a3b8; margin-top: 3px;">
+          Live signing preview
+        </small>
+      </div>
+    </div>
+
+    <div style="
+      background: linear-gradient(180deg, #ffffff, #eef2ff);
+      border-radius: 24px;
+      min-height: 245px;
+      padding: 20px;
+      box-shadow: 0 26px 65px rgba(0,0,0,0.32);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    ">
+      <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 14px;
+      ">
+        <div style="width: 70%; display: grid; gap: 9px;">
+          <span style="width: 75%; height: 18px; border-radius: 999px; background: #334155; display: block;"></span>
+          <span style="width: 95%; height: 9px; border-radius: 999px; background: #cbd5e1; display: block;"></span>
+        </div>
+
+        <div style="
+          padding: 8px 10px;
+          border-radius: 12px;
+          color: white;
+          background: linear-gradient(135deg, #ef4444, #7c3aed);
+          font-size: 12px;
+          font-weight: 900;
+        ">
+          PDF
+        </div>
+      </div>
+
+      <div style="display: grid; gap: 12px; margin-top: 28px;">
+        <span style="width: 95%; height: 9px; border-radius: 999px; background: #d1d5db; display: block;"></span>
+        <span style="width: 82%; height: 9px; border-radius: 999px; background: #d1d5db; display: block;"></span>
+        <span style="width: 70%; height: 9px; border-radius: 999px; background: #d1d5db; display: block;"></span>
+        <span style="width: 48%; height: 9px; border-radius: 999px; background: #d1d5db; display: block;"></span>
+      </div>
+
+      <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 12px;
+        margin-top: 30px;
+      ">
+        <div style="
+          padding: 12px 14px;
+          min-width: 130px;
+          border-radius: 17px;
+          border: 2px dashed rgba(124,58,237,0.55);
+          background: rgba(124,58,237,0.08);
+        ">
+          <p style="
+            margin: 0;
+            color: #111827;
+            font-size: 27px;
+            line-height: 1;
+            font-family: cursive;
+          ">
+            John
+          </p>
+          <small style="
+            display: block;
+            margin-top: 6px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+          ">
+            --------------
+          </small>
+        </div>
+
+        <div style="
+          padding: 9px 11px;
+          border-radius: 12px;
+          transform: rotate(-8deg);
+          color: #16a34a;
+          background: rgba(34,197,94,0.08);
+          border: 2px solid rgba(34,197,94,0.65);
+          font-size: 11px;
+          font-weight: 900;
+          letter-spacing: 1px;
+        ">
+          VERIFIED
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+  </section>
+
+  <section class="workflow-steps glass-card">
+    <div class="workflow-step" [class.active]="selectedFile">
+      <span>01</span>
+      <div>
+        <strong>Upload PDF</strong>
+        <small>Select your document</small>
+      </div>
+    </div>
+
+    <div class="workflow-line"></div>
+
+    <div class="workflow-step" [class.active]="signatureSaved">
+      <span>02</span>
+      <div>
+        <strong>Draw Signature</strong>
+        <small>Create PNG signature</small>
+      </div>
+    </div>
+
+    <div class="workflow-line"></div>
+
+    <div class="workflow-step" [class.active]="placement">
+      <span>03</span>
+      <div>
+        <strong>Place Signature</strong>
+        <small>Drag and resize</small>
+      </div>
+    </div>
+
+    <div class="workflow-line"></div>
+
+    <div class="workflow-step" [class.active]="placement">
+      <span>04</span>
+      <div>
+        <strong>Download PDF</strong>
+        <small>Final signed file</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="workspace-layout">
+    <div class="left-panel">
+      <div class="tool-card glass-card upload-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Step 01</p>
+            <h2>Upload Document</h2>
+          </div>
+
+          <span class="pill">PDF only</span>
+        </div>
+
+        <label
+          class="drop-zone"
+          [class.dragging]="isDragging"
+          [class.has-file]="selectedFile"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+        >
+          <input
+            type="file"
+            accept="application/pdf,.pdf"
+            (change)="onFileInputChange($event)"
+          />
+
+          <div class="upload-icon">
+            <span></span>
+          </div>
+
+          @if (!selectedFile) {
+            <h3>Drop your PDF here</h3>
+            <p>or click to browse from your computer</p>
+            <small>Maximum file size: 20MB</small>
+          }
+
+          @if (selectedFile) {
+            <h3>{{ selectedFile.name }}</h3>
+            <p>{{ formatFileSize(selectedFile.size) }}</p>
+            <small>
+              {{ totalPages > 0 ? totalPages + ' pages detected' : 'Reading PDF...' }}
+            </small>
+          }
+        </label>
+
+        @if (selectedFile) {
+          <div class="file-card">
+            <div class="file-icon">PDF</div>
+
+            <div class="file-info">
+              <strong>{{ selectedFile.name }}</strong>
+              <span>{{ formatFileSize(selectedFile.size) }}</span>
+            </div>
+
+            <button type="button" class="remove-btn" (click)="clearSelectedFile()">
+              Remove
+            </button>
+          </div>
+        }
+
+        @if (isUploading || uploadProgress > 0) {
+          <div class="progress-section">
+            <div class="progress-top">
+              <span>Uploading PDF</span>
+              <strong>{{ uploadProgress }}%</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div [style.width.%]="uploadProgress"></div>
+            </div>
+          </div>
+        }
+
+        <div class="button-row">
+          <button
+            type="button"
+            class="btn-primary"
+            [disabled]="!selectedFile || isUploading"
+            (click)="uploadPdf()"
+          >
+            {{ isUploading ? 'Uploading...' : 'Upload PDF' }}
+          </button>
+
+          <button
+            type="button"
+            class="btn-outline"
+            [disabled]="!selectedFile || isUploading"
+            (click)="clearSelectedFile()"
+          >
+            Clear
+          </button>
+        </div>
+
+        @if (uploadedPdf) {
+          <div class="upload-result">
+            <h3>Upload Complete</h3>
+
+            <div class="result-row">
+              <span>File</span>
+              <strong>{{ uploadedPdf.originalFileName }}</strong>
+            </div>
+
+            <div class="result-row">
+              <span>Size</span>
+              <strong>{{ formatFileSize(uploadedPdf.sizeInBytes) }}</strong>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="tool-card glass-card signature-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Step 02</p>
+            <h2>Draw Signature</h2>
+          </div>
+
+          @if (signatureSaved) {
+            <span class="pill active">Saved</span>
+          } @else {
+            <span class="pill">Canvas</span>
+          }
+        </div>
+
+        <div class="signature-board">
+          <canvas #signatureCanvas></canvas>
+        </div>
+
+        <div class="signature-actions">
+          <button type="button" class="btn-primary" (click)="saveSignature()">
+            Save Signature
+          </button>
+
+          <button type="button" class="btn-outline" (click)="clearSignature()">
+            Clear
+          </button>
+        </div>
+
+        <div class="sign-image-upload-section">
+  <div class="sign-image-divider">
+    <span></span>
+    <p> Upload Signature Image</p>
+    <span></span>
+  </div>
+
+  <label class="sign-image-upload-card">
+    <input
+      class="sign-image-file-input"
+      type="file"
+      accept="image/png,image/jpeg,image/jpg,image/webp"
+      (change)="onSignatureImageInputChange($event)"
+    />
+
+    <div class="sign-image-left">
+      <br>
+
+      <div class="sign-image-upload-text">
+        
+        <small>
+          Upload a clear signature photo. Background will be removed automatically.
+        </small>
+      </div>
+    </div>
+
+    
+  </label>
+
+  @if (uploadedSignatureFileName) {
+    <div class="sign-image-file-info">
+      <div class="sign-image-file-icon">✓</div>
+
+      <div>
+        <span>Uploaded image</span>
+        <strong>{{ uploadedSignatureFileName }}</strong>
+      </div>
+    </div>
+  }
+</div>
+
+        @if (signatureDataUrl) {
+          <div class="signature-preview">
+            <div>
+              <strong>Signature Preview</strong>
+              <span>Your signature is ready to place.</span>
+            </div>
+
+            <img [src]="signatureDataUrl" alt="Saved Signature" />
+          </div>
+        }
+      </div>
+
+      <div class="tool-card glass-card placement-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Step 03</p>
+            <h2>Place Signature</h2>
+          </div>
+
+          @if (placement) {
+            <span class="pill active">Placed</span>
+          } @else {
+            <span class="pill">Waiting</span>
+          }
+        </div>
+
+        <div class="page-control">
+          <label>Select Page</label>
+
+          <input
+            type="number"
+            min="1"
+            [max]="totalPages || 1"
+            [value]="selectedPage"
+            [disabled]="totalPages === 0"
+            (input)="selectPageFromInput($event)"
+          />
+
+          <small>
+            @if (totalPages > 0) {
+              Click a PDF page or type page number. Total pages: {{ totalPages }}
+            } @else {
+              Upload a PDF first.
+            }
+          </small>
+        </div>
+
+        <button
+          type="button"
+          class="btn-primary place-btn"
+          [disabled]="!selectedFile || !signatureSaved || totalPages === 0"
+          (click)="placeSignatureOnSelectedPage()"
+        >
+          Place Signature on Page {{ selectedPage }}
+        </button>
+
+        <button
+          type="button"
+          class="btn-outline place-btn"
+          [disabled]="!placement"
+          (click)="removePlacedSignature()"
+        >
+          Remove Placed Signature
+        </button>
+
+        <div class="final-sign-box">
+          <div class="final-header">
+            <div class="final-icon">✓</div>
+            <div>
+              <h3>Finalize Signed PDF</h3>
+              <p>Confirm signer details and create your final document.</p>
+            </div>
+          </div>
+
+          <label>Signer Name</label>
+          <input
+            class="final-input"
+            type="text"
+            [value]="signerName"
+            placeholder="Enter signer name"
+            (input)="onSignerNameChange($event)"
+          />
+
+          <label class="checkbox-row">
+            <input
+              type="checkbox"
+              [checked]="addDateStamp"
+              (change)="onDateStampChange($event)"
+            />
+            <span>Add date stamp near signature</span>
+          </label>
+
+          <button
+            type="button"
+            class="btn-primary sign-download-btn"
+            [disabled]="!placement || signingPdf"
+            (click)="downloadSignedPdf()"
+          >
+            {{ signingPdf ? 'Creating Signed PDF...' : 'Create & Download Signed PDF' }}
+          </button>
+        </div>
+      </div>
+
+      @if (errorMessage) {
+        <div class="alert error-alert">
+          {{ errorMessage }}
+        </div>
+      }
+
+      @if (successMessage) {
+        <div class="alert success-alert">
+          {{ successMessage }}
+        </div>
+      }
+    </div>
+
+    <div class="preview-panel glass-card">
+      <div class="preview-header">
+        <div>
+          <p class="eyebrow">Live PDF Preview</p>
+          <h2>Document Workspace</h2>
+        </div>
+
+        @if (totalPages > 0) {
+          <span class="pill active">{{ totalPages }} Pages</span>
+        } @else {
+          <span class="pill">Waiting</span>
+        }
+      </div>
+
+      @if (!selectedFile) {
+        <div class="empty-preview">
+          <div class="empty-doc">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <h3>No PDF selected</h3>
+          <p>Your document preview will appear here.</p>
+        </div>
+      }
+
+      @if (selectedFile) {
+        <div class="pdf-toolbar">
+          <div>
+            <strong>{{ selectedFile.name }}</strong>
+            <span>
+              @if (pdfLoading) {
+                Rendering pages...
+              } @else {
+                Click a page to select it. Selected page: {{ selectedPage }}
+              }
+            </span>
+          </div>
+
+          <div class="toolbar-status">
+            @if (placement) {
+              Signature placed
+            } @else {
+              Ready
+            }
+          </div>
+        </div>
+
+        <div class="pdf-scroll-area">
+          @if (pdfLoading) {
+            <div class="pdf-loading">
+              <div class="spinner"></div>
+              <p>Rendering PDF pages...</p>
+            </div>
+          }
+
+          <div #pdfPagesContainer class="pdf-pages-container"></div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

@@ -1,0 +1,65 @@
+<div class="auth-page">
+  <section class="register-card glass-card">
+    <div class="header">
+      <div class="logo-box">
+        <img src="/images/signpro.png" alt="SignPro Logo" />
+      </div>
+      <p class="eyebrow">Create account</p>
+      <h1>Start signing smarter</h1>
+      <p class="sub-text">
+        Create your SignPro account and manage all signed PDF documents in one secure dashboard.
+      </p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label>Full Name</label>
+      <input
+        class="input-box"
+        type="text"
+        formControlName="fullName"
+        placeholder="Your full name"
+      />
+
+      @if (form.controls.fullName.touched && form.controls.fullName.invalid) {
+        <p class="error-text">Full name must contain at least 3 characters.</p>
+      }
+
+      <label>Email Address</label>
+      <input
+        class="input-box"
+        type="email"
+        formControlName="email"
+        placeholder="you@example.com"
+      />
+
+      @if (form.controls.email.touched && form.controls.email.invalid) {
+        <p class="error-text">Enter a valid email address.</p>
+      }
+
+      <label>Password</label>
+      <input
+        class="input-box"
+        type="password"
+        formControlName="password"
+        placeholder="Minimum 6 characters"
+      />
+
+      @if (form.controls.password.touched && form.controls.password.invalid) {
+        <p class="error-text">Password must contain at least 6 characters.</p>
+      }
+
+      @if (errorMessage) {
+        <p class="error-text">{{ errorMessage }}</p>
+      }
+
+      <button class="btn-primary full-btn" type="submit" [disabled]="loading">
+        {{ loading ? 'Creating account...' : 'Create Account' }}
+      </button>
+    </form>
+
+    <p class="switch-text">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+  </section>
+</div>

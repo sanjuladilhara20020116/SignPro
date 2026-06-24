@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mmxD31LojvU=",
+  "dgSpecHash": "P3HVwy62rC8=",
   "success": true,
   "projectFilePath": "D:\\SignPro\\SignPro.Api\\SignPro.Api.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,10 @@
     "D:\\NuGetPackages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "D:\\NuGetPackages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "D:\\NuGetPackages\\pdfsharp\\6.2.4\\pdfsharp.6.2.4.nupkg.sha512",
+    "D:\\NuGetPackages\\pdfsharpcore\\1.3.67\\pdfsharpcore.1.3.67.nupkg.sha512",
+    "D:\\NuGetPackages\\sharpziplib\\1.4.2\\sharpziplib.1.4.2.nupkg.sha512",
+    "D:\\NuGetPackages\\sixlabors.fonts\\1.0.0-beta17\\sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "D:\\NuGetPackages\\sixlabors.imagesharp\\1.0.4\\sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "D:\\NuGetPackages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "D:\\NuGetPackages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "D:\\NuGetPackages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

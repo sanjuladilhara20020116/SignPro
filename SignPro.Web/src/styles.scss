@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #070b1f;
+  --bg-card: rgba(255, 255, 255, 0.09);
+  --bg-card-strong: rgba(255, 255, 255, 0.14);
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
+  --secondary: #06b6d4;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-soft: rgba(255, 255, 255, 0.14);
+  --shadow-glow: 0 30px 100px rgba(124, 58, 237, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.35), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.28), transparent 32%),
+    var(--bg-main);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-glow);
+  border-radius: 28px;
+}
+
+.btn-primary {
+  border: none;
+  padding: 14px 20px;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 16px 35px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(6, 182, 212, 0.35);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-soft);
+  padding: 12px 18px;
+  border-radius: 14px;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.input-box {
+  width: 100%;
+  padding: 15px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  outline: none;
+}
+
+.input-box::placeholder {
+  color: var(--text-muted);
+}
+
+.input-box:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.18);
+}
+
+.error-text {
+  color: #fca5a5;
+  font-size: 13px;
+}
+
+.success-text {
+  color: #86efac;
+  font-size: 13px;
+}
